@@ -5,6 +5,7 @@
   user:
     name: "{{ item }}"
     groups: "wheel"
+    append: yes
   loop:
     - User1
     - User2
@@ -14,6 +15,7 @@
   user:
     name: "{{ item }}"
     groups: "sudo"
+    append: yes
   loop:
     - User1
     - User2
