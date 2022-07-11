@@ -1,13 +1,13 @@
 ---
 # tasks file for package_update
 
-- name: Installing common packages (CentOS/RHEL)...
+- name: CentOS/RHEL
   block:
-    - name: Installing epel (for htop)...
+    - name: Installing epel (for htop, CentOS/RHEL)...
       yum:
         name: epel-release
         state: latest
-    - name: Installing packages...
+    - name: Installing common packages (CentOS/RHEL)...
       yum:
         name:
           - curl
