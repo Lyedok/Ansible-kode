@@ -3,18 +3,18 @@
 
 - name: Adding users to wheel group (CentOS/RHELL)...
   user:
-    name: {{ item }}
-    group: wheel
-  with_items:
-    - "User1"
-    - "User2"
+    name: "{{ item }}"
+    groups: "wheel"
+  loop:
+    - User1
+    - User2
   when: ansible_os_family == "RedHat"
 
 - name: Adding users to sudo group (Debian/Ubuntu)...
   user:
-    name: {{ item }}
-    group: sudo
-  with_items:
-    - "User1"
-    - "User2"
+    name: "{{ item }}"
+    groups: "sudo"
+  loop:
+    - User1
+    - User2
   when: ansible_os_family == "debian"
