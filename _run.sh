@@ -6,4 +6,4 @@ if [ -z "$1" ]; then
 fi
 
 export ANSIBLE_LOG_PATH=./deploy-$(date '+%Y.%m.%d_%H:%M').log
-ansible-playbook -u "$1" -i inventory/hosts deploy_docker.yml -b
+ansible-playbook -u "$1" -i hosts playbook.yml -b
