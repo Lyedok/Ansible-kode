@@ -1,0 +1,20 @@
+---
+# tasks file for package_update
+
+- name: Installing common packages (CentOS/RHEL)...
+  yum:
+    name:
+      - curl
+      - wget
+      - htop
+    state: latest
+  when: ansible_os_family == "RedHat"
+
+- name: Installing common packages (Debian/Ubuntu)...
+  apt:
+    name:
+      - curl
+      - wget
+      - htop
+    state: latest
+  when: ansible_os_family == "Debian"

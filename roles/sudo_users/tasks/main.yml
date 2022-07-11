@@ -1,0 +1,18 @@
+---
+# tasks file for sudo_users
+
+- name: Adding users to wheel group (CentOS/RHELL)...
+  user:
+    - name: User1
+      group: wheel
+    - name: User2
+      group: wheel
+  when: ansible_os_family == "RedHat"
+
+- name: Adding users to sudo group (Debian/Ubuntu)...
+  user:
+    - name: User1
+      group: sudo
+    - name: User2
+      group: sudo
+  when: ansible_os_family == "debian"

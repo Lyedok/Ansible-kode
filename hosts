@@ -1,0 +1,10 @@
+[debian]
+debian1 ansible_host=192.168.0.88
+
+[centos]
+centos1 ansible_host=192.168.0.3
+
+[debian:vars]
+ansible_ssh_private_key_file=~/.ssh/debian
+[centos:vars]
+ansible_ssh_private_key_file=~/.ssh/centos

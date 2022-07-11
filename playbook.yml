@@ -1,0 +1,11 @@
+---
+
+- name: Hosts configuration
+  hosts: all
+  become: yes
+
+  roles:
+    - update_packages
+    - install_packages
+    - create_users
+    - sudo_users

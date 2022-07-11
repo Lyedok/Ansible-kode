@@ -1,0 +1,10 @@
+---
+# tasks file for package_update
+
+- name: Updating packages (CentOS/RHEL)... It may take a while...
+  yum: update_cache=yes name=* state=latest
+  when: ansible_os_family == "RedHat"
+
+- name: Updating packages (Debian/Ubuntu)... It may take a while...
+  apt: upgrade=yes update_cache=yes
+  when: ansible_os_family == "Debian"
