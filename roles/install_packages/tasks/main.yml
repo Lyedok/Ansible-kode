@@ -2,13 +2,18 @@
 # tasks file for package_update
 
 - name: Installing common packages (CentOS/RHEL)...
-  yum:
-    name:
-      - curl
-      - wget
-      - epel-release
-      - htop
-    state: latest
+  block:
+    - name: Installing epel (for htop)...
+      yum:
+        name: epel-release
+        state: latest
+    - name: Installing packages...
+      yum:
+        name:
+          - curl
+          - wget
+          - htop
+        state: latest
   when: ansible_os_family == "RedHat"
 
 - name: Installing common packages (Debian/Ubuntu)...
